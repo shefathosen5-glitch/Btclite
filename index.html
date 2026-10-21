@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিটকয়েন লাইট</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #coin {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #f0932b, #ffbe76);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(240, 147, 43, 0.5);
+            transition: transform 0.1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        #coin:active {
+            transform: scale(0.95);
+        }
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="score">ব্যালেন্স: <span id="points">০</span> বিটিসিএল</div>
+    <div id="coin">₿</div>
+
+    <script>
+        let points = 0;
+        const coin = document.getElementById('coin');
+        const pointsDisplay = document.getElementById('points');
+
+        coin.addEventListener('click', () => {
+            points++;
+            pointsDisplay.textContent = points;
+        });
+    </script>
+</body>
+</html>
